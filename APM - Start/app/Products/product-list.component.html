@@ -1,7 +1,7 @@
 
 <div class='panel panel-primary'>
     <div class='panel-heading'>
-        Product list
+        {{pageTitle}}
     </div>
 
     <!-- Filter the Products   -->
@@ -18,7 +18,8 @@
             </div>
         </div>
 
-        <div class='table-responsive'>
+        <div class='table-responsive'
+                *ngIf='products && products.length'>
             <table class='table'>
                 <thead>
                     <tr>
@@ -35,7 +36,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    
+                    <tr *ngFor='let product of products'>
+                        <td></td>
+                        <td>{{product.productName}}</td>
+                        <td>{{product.productCode}}</td>
+                        <td>{{product.releaseDate}}</td>
+                        <td>{{product.price}}</td>
+                        <td>{{product.starRating}}</td>
+                    </tr>
                 </tbody>
             </table>
         </div>
