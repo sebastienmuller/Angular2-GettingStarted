@@ -10,6 +10,8 @@ import { ProductDetailGuard } from './product-guard.service'
 import { ProductService } from './product.service'
 import { StarComponent }  from '../shared/star.component';
 
+import { SharedModule } from '../shared/shared.module';
+
 @NgModule({
     declarations: [
         ProductListComponent,
@@ -17,8 +19,7 @@ import { StarComponent }  from '../shared/star.component';
         ProductFilterPipe
     ],
     imports: [
-        FormsModule,
-        CommonModule,
+        SharedModule,
         RouterModule.forChild([
             { path: 'products', component: ProductListComponent },
                   { path: 'product/:id',
